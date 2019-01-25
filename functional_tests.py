@@ -33,13 +33,14 @@ class NewVisitorTest(unittest.TestCase):
         
         #When He hits enter, the page updated, and now the page lists
         # 1: Buy peacock feathers as an item in a to-do list
-        inputbox.send_keys(Keys.Enter)
+        inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
 
         table = self.browser.find_element_by_id('id_list_table')
-        rows = self.browser.find_element_by_tag_name('tr')
+        rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1. Buy peacock feathers' for row in rows)
+            any(row.text == '1: Buy peacock feathers' for row in rows),
+            "New Item did not appear in table"
         )
         
         #There is still a text box inviting him to add another item
