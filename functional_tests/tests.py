@@ -64,7 +64,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         #Barry woners whether the site will remember his list. Then he sees the site had generated a unique URL for him
         #some tet explains this/
-        self.fail('finish the test!')
+        #self.fail('finish the test!')
 
         #He visist that URL - the to-do list is still there
 
